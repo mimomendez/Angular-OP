@@ -1,0 +1,8 @@
+<div class="container">
+    <label class="title">{{title}}</label>
+    <div class="barContainer">
+        <div class="madeTotals numbers">{{made}}/{{totals}}</div>
+        <mat-progress-bar [mode]="determinate" [color]="primary" [value]="percentage"></mat-progress-bar>
+        <div class="percentage numbers">{{percentage}}%</div>
+    </div>
+</div>

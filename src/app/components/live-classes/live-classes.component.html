@@ -1,0 +1,15 @@
+<div class="panel {{backColor}}">
+    <app-progres-bar title="Clases en Vivo" percentage="{{per}}" made="{{mad}}" totals="{{tot}}"></app-progres-bar>
+    <button *ngIf="!timer" class="buttonTimer" (click)="inicTimer()">START TIMER!!</button>
+    <label *ngIf="timer" class="clock">La inscripcion cierra en: <div class="clockColor"><countdown [config]="{leftTime: 60}" (finished)="onFinish()">$!m!:$!s!</countdown> <i class="far fa-clock"></i></div></label>
+    <div class="carousel" data-flickity='{ "wrapAround": false, "cellAlign": "left", "draggable": false }'>
+        <div class="carousel-cell" *ngFor="let class of classes">
+            <p *ngIf="canClick" class="inscribite">Inscribite</p>
+            <img src="{{class.img}}" />
+            <p class="type">{{class.type}} <i class="fas fa-info-circle"></i></p>
+            <p class="title">{{class.title}}</p>
+            <p class="description">{{class.description}}</p>
+            <p *ngIf="class.document" class="laminas" (click)="goToUrl(class.document)">Ver laminas de clase</p>
+        </div>
+    </div>
+</div>

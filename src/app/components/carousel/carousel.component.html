@@ -1,0 +1,9 @@
+<div class="carousel" data-flickity='{ "wrapAround": false, "cellAlign": "left", "draggable": false }'>
+    <div class="carousel-cell" *ngFor="let class of classes">
+        <p *ngIf="class.status == 'IN_PROGRESS'" class="inProgress">En Progreso</p>
+        <img *ngIf="class.img != ''" src="{{class.img}}" />
+        <img *ngIf="class.img == ''" src="../../../assets/logoExtra.png" />
+        <p class="title">{{class.title}}</p>
+        <p class="description">{{class.description}}</p>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+    <label class="title">{{title}}</label>
+    <div class="levelContainer left">
+        <p class="number">{{actualLevel}}</p>
+        <p class="level">Nivel</p>
+    </div>
+    <div class="barContainer">
+        <div class="madeTotals numbers">0%</div>
+        <div class="actualPercent" [ngStyle]="{'left.%': value < 40 ? value*0.9 : value*0.8}">{{value}}%</div>
+        <mat-progress-bar [mode]="determinate" [color]="primary" [value]="value"></mat-progress-bar>
+        <div class="percentage numbers">100%</div>
+    </div>
+    <div class="levelContainer right">
+        <p class="number">{{nextLevel}}</p>
+        <p class="level">Nivel</p>
+    </div>
+</div>
